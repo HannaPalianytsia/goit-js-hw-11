@@ -47,3 +47,34 @@
 .search-button:focus {
   background: #6c8cff;
 }
+
+/* =============== GALLERY ================= */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+.gallery-item {
+  width: 360px;
+  /* height: 200px; */
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+.gallery-item > a > ul {
+  display: flex;
+  width: auto;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #808080;
+}
+.gallery-item > a > img {
+  width: 100%;
+  max-height: 170px;
+  object-fit: cover;
+  overflow: hidden;
+}
