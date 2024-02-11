@@ -1,7 +1,8 @@
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 import { refs } from "./refs";
-
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 
 export function checkFunction(userData) {
@@ -17,6 +18,8 @@ export function checkFunction(userData) {
 };
 
 function renderFunction(userArray) {
+  let gallery = new SimpleLightbox(".gallery a");
+  gallery.refresh();
     const markup = userArray.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => {
         return `<li class="gallery-item">
         <a href="${largeImageURL}">
@@ -41,5 +44,7 @@ function renderFunction(userArray) {
           </ul>
         </a></li>`
     }).join("");
-    refs.gallery.innerHTML = markup;
+  refs.gallery.innerHTML = markup;
+
+  gallery = new SimpleLightbox(".gallery a",{captions: false,});
 };
