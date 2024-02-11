@@ -7,6 +7,6 @@ export function onFormSubmit(event) {
     refs.gallery.innerHTML = "";
     const userText = refs.input.value.trim();
     if (userText !== "") {
-        pixabayApi(userText).then(checkFunction);
+        pixabayApi(userText).then(checkFunction).catch();
     };
 }

@@ -19,26 +19,26 @@ export function checkFunction(userData) {
 function renderFunction(userArray) {
     const markup = userArray.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => {
         return `<li class="gallery-item">
-        <a href="${webformatURL}">
-            <img src="${webformatURL}" alt="${tags}" title="${tags}"/>
-            <ul>
-        <li>
-          <h3>Likes</h3>
-          <p>${likes}</p>
-        </li>
-        <li>
-          <h3>Vievs</h3>
-          <p>${views}</p>
-        </li>
-        <li>
-          <h3>Comments</h3>
-          <p>${comments}</p>
-        </li>
-        <li>
-          <h3>Downloads</h3>
-          <p>${downloads}</p>
-        </li>
-      </ul>
+        <a href="${largeImageURL}">
+          <img src="${webformatURL}" alt="${tags}" title="${tags}"/>
+          <ul>
+            <li>
+              <h3>Likes</h3>
+              <p>${likes}</p>
+            </li>
+            <li>
+              <h3>Vievs</h3>
+              <p>${views}</p>
+            </li>
+            <li>
+              <h3>Comments</h3>
+              <p>${comments}</p>
+            </li>
+            <li>
+              <h3>Downloads</h3>
+              <p>${downloads}</p>
+            </li>
+          </ul>
         </a></li>`
     }).join("");
     refs.gallery.innerHTML = markup;
